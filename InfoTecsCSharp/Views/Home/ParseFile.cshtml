@@ -1,0 +1,20 @@
+﻿@{
+    ViewData["Title"] = "ParseFile";
+}
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+
+<form method="post" enctype="multipart/form-data">
+    <input type="file" name="file" accept=".csv, application/csv, text/csv" /> <br />
+    <button type="submit">Upload File</button>
+</form>
+ 
+@if(ViewBag.Message != null)
+{
+    <div class="alert" style="margin-top:20px">
+        @ViewBag.Message
+    </div>
+}

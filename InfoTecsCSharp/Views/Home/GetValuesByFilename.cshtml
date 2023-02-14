@@ -1,0 +1,13 @@
+﻿@{
+    ViewData["Title"] = "GetValuesByFilename";
+}
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+
+<form method="Post">
+    <input type="text" name="filename" pattern="^[\w,\s-]+\.csv" /> <br />
+    <button type="submit">Ok</button>
+</form>

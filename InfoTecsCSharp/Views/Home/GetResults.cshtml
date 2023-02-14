@@ -1,0 +1,51 @@
+﻿@model GetResultFilter
+@{
+    ViewData["Title"] = "GetResults";
+}
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+
+<form method="post" asp-controller="Home" asp-action="GetResults">
+    <div asp-validation-summary="All"></div>
+    <div>
+        <label asp-for="Filename"></label>
+        <input asp-for="Filename" /> <br />
+        <span asp-validation-for="Filename"></span>
+    </div>
+    <div>
+        <label asp-for="FirstOperationFrom"></label>
+        <input class="form-control" asp-for="FirstOperationFrom" asp-format="{0:yyyy-MM-ddTHH:mm}"
+               min="2000-01-01" />
+        <span asp-validation-for="FirstOperationFrom"></span>
+    </div>
+    <div>
+        <label asp-for="FirstOperationTo"></label>
+        <input class="form-control" asp-for="FirstOperationTo" asp-format="{0:yyyy-MM-ddTHH:mm}"
+               min="2000-01-01" />
+        <span asp-validation-for="FirstOperationTo"></span>
+    </div>
+    <div>
+        <label asp-for="AverageOperationTimeFrom"></label>
+        <input class="form-control" asp-for="AverageOperationTimeFrom" />
+        <span asp-validation-for="AverageOperationTimeFrom"></span>
+    </div>
+    <div>
+        <label asp-for="AverageOperationTimeTo"></label>
+        <input class="form-control" asp-for="AverageOperationTimeTo" />
+        <span asp-validation-for="AverageOperationTimeTo"></span>
+    </div>
+    <div>
+        <label asp-for="AverageValueFrom"></label>
+        <input class="form-control" asp-for="AverageValueFrom" />
+        <span asp-validation-for="AverageValueFrom"></span>
+    </div>
+    <div>
+        <label asp-for="AverageValueTo"></label>
+        <input class="form-control" asp-for="AverageValueTo" />
+        <span asp-validation-for="AverageValueTo"></span>
+    </div>
+    <button type="submit">Ok</button>
+</form>
